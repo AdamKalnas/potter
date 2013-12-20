@@ -22,4 +22,10 @@ var _ = Describe("Potter", func() {
 		Expect(bookstore.Cost(books)).To(Equal(800))
 	})
 
+	It("Should charge $16 for 2 copies of the same book", func() {
+		books := make(map[string]int)
+		books["Goblet of Fire"] = 2
+
+		Expect(bookstore.Cost(books)).To(Equal(1600))
+	})
 })
